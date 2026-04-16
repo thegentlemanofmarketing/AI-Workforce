@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gentleman of Marketing | AI Workforce</title>
+    
+    <!-- Tailwind CSS (via CDN for plug-and-play) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configure Tailwind with Brand Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#a98a66',
+                            black: '#000000',
+                            white: '#ffffff',
+                            dark: '#111111',
+                            darker: '#0a0a0a'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons (via CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        /* Hide elements by default for JS toggling */
+        .tab-content.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 border-b border-brand-gold/20 backdrop-blur-md bg-black/85">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="bot" class="text-brand-gold w-8 h-8"></i>
+                    <span class="font-bold text-xl tracking-wider uppercase text-brand-gold">
+                        The Gentleman of Marketing
+                    </span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#journey" class="hover:text-brand-gold transition-colors px-3 py-2 rounded-md text-sm font-medium">Journey</a>
+                        <a href="#services" class="hover:text-brand-gold transition-colors px-3 py-2 rounded-md text-sm font-medium">AI Solutions</a>
+                        <a href="#workflows" class="hover:text-brand-gold transition-colors px-3 py-2 rounded-md text-sm font-medium">Workflows</a>
+                        <button class="px-6 py-2 rounded-sm font-medium transition-all hover:opacity-90 bg-brand-gold text-black">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
+                        <i data-lucide="menu" id="menu-icon"></i>
+                        <i data-lucide="x" id="close-icon" class="hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#journey" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:text-brand-gold">Journey</a>
+                <a href="#services" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:text-brand-gold">AI Solutions</a>
+                <a href="#workflows" class="mobile-link block px-3 py-2 rounded-md text-base font-medium hover:text-brand-gold">Workflows</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-gold rounded-full mix-blend-screen filter blur-[150px] opacity-20 animate-pulse-slow"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-gold rounded-full mix-blend-screen filter blur-[150px] opacity-10"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                Never Miss a Client <br /> Who's Ready to <span class="text-brand-gold">Book.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl text-xl text-gray-300 mx-auto mb-10">
+                In personal services, speed and visibility drive bookings. Our bespoke AI Workforce keeps you responsive 24/7, boosting visibility, managing reputation, and capturing leads while you focus on your clients.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="px-8 py-4 rounded-sm font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-brand-gold/20 bg-brand-gold text-black">
+                    Deploy Your AI Workforce
+                </button>
+                <button class="px-8 py-4 rounded-sm font-bold text-lg border-2 border-brand-gold text-brand-gold transition-all hover:bg-white/5">
+                    Explore Features
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Customer Journey -->
+    <section id="journey" class="py-24 border-y border-brand-gold/10 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold uppercase tracking-widest text-brand-gold">The Customer Journey</h2>
+                <p class="mt-4 text-gray-400">Mastering every stage of client acquisition and retention.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                <!-- Journey Item 1 -->
+                <div class="relative p-6 rounded-lg border border-gray-800 hover:border-brand-gold transition-colors bg-black flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full mb-4 flex items-center justify-center transition-transform group-hover:scale-110 bg-brand-gold/20 text-brand-gold">
+                        <i data-lucide="target" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Awareness</h3>
+                    <p class="text-sm text-gray-400">Making potential clients aware of the brand through targeted digital strategies.</p>
+                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-gray-700 z-10">
+                        <i data-lucide="chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- Journey Item 2 -->
+                <div class="relative p-6 rounded-lg border border-gray-800 hover:border-brand-gold transition-colors bg-black flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full mb-4 flex items-center justify-center transition-transform group-hover:scale-110 bg-brand-gold/20 text-brand-gold">
+                        <i data-lucide="search" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Findability</h3>
+                    <p class="text-sm text-gray-400">Ensuring the business appears where customers are looking (SEO & Local listings).</p>
+                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-gray-700 z-10">
+                        <i data-lucide="chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- Journey Item 3 -->
+                <div class="relative p-6 rounded-lg border border-gray-800 hover:border-brand-gold transition-colors bg-black flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full mb-4 flex items-center justify-center transition-transform group-hover:scale-110 bg-brand-gold/20 text-brand-gold">
+                        <i data-lucide="star" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Reputation</h3>
+                    <p class="text-sm text-gray-400">Building trust through social proof, reviews, and managing online image.</p>
+                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-gray-700 z-10">
+                        <i data-lucide="chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- Journey Item 4 -->
+                <div class="relative p-6 rounded-lg border border-gray-800 hover:border-brand-gold transition-colors bg-black flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full mb-4 flex items-center justify-center transition-transform group-hover:scale-110 bg-brand-gold/20 text-brand-gold">
+                        <i data-lucide="check-circle" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Conversion</h3>
+                    <p class="text-sm text-gray-400">Turning interested prospects into paying customers with optimized tools.</p>
+                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-gray-700 z-10">
+                        <i data-lucide="chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- Journey Item 5 -->
+                <div class="relative p-6 rounded-lg border border-gray-800 hover:border-brand-gold transition-colors bg-black flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full mb-4 flex items-center justify-center transition-transform group-hover:scale-110 bg-brand-gold/20 text-brand-gold">
+                        <i data-lucide="users" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Advocacy</h3>
+                    <p class="text-sm text-gray-400">Encouraging satisfied customers to become brand ambassadors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Solutions / Interactive Tabs -->
+    <section id="services" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Your Custom <span class="text-brand-gold">AI Employees</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Deploy specialized roles tailored to your needs—from an AI Receptionist to a Reputation Specialist.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-10">
+                <!-- Sidebar Tabs -->
+                <div class="lg:w-1/3 flex flex-col gap-2" id="tab-buttons">
+                    <button data-target="conversations" class="tab-btn flex items-center gap-4 w-full p-4 rounded-md transition-all text-left border-l-4 bg-brand-dark border-brand-gold text-white shadow-md">
+                        <i data-lucide="message-square" class="text-brand-gold w-6 h-6 icon-active"></i>
+                        <span class="font-semibold text-lg">Conversations AI</span>
+                    </button>
+                    <button data-target="reputation" class="tab-btn flex items-center gap-4 w-full p-4 rounded-md transition-all text-left border-l-4 border-transparent text-gray-500 hover:text-gray-300 hover:bg-brand-dark/50">
+                        <i data-lucide="star" class="w-6 h-6 icon-inactive"></i>
+                        <span class="font-semibold text-lg">Reputation AI</span>
+                    </button>
+                    <button data-target="social" class="tab-btn flex items-center gap-4 w-full p-4 rounded-md transition-all text-left border-l-4 border-transparent text-gray-500 hover:text-gray-300 hover:bg-brand-dark/50">
+                        <i data-lucide="share-2" class="w-6 h-6 icon-inactive"></i>
+                        <span class="font-semibold text-lg">Social Marketing</span>
+                    </button>
+                    <button data-target="seo" class="tab-btn flex items-center gap-4 w-full p-4 rounded-md transition-all text-left border-l-4 border-transparent text-gray-500 hover:text-gray-300 hover:bg-brand-dark/50">
+                        <i data-lucide="map-pin" class="w-6 h-6 icon-inactive"></i>
+                        <span class="font-semibold text-lg">Local SEO Pro</span>
+                    </button>
+                    <button data-target="campaign" class="tab-btn flex items-center gap-4 w-full p-4 rounded-md transition-all text-left border-l-4 border-transparent text-gray-500 hover:text-gray-300 hover:bg-brand-dark/50">
+                        <i data-lucide="mail" class="w-6 h-6 icon-inactive"></i>
+                        <span class="font-semibold text-lg">Campaign Pro</span>
+                    </button>
+                    <button data-target="crm" class="tab-btn flex items-center gap-4 w-full p-4 rounded-md transition-all text-left border-l-4 border-transparent text-gray-500 hover:text-gray-300 hover:bg-brand-dark/50">
+                        <i data-lucide="briefcase" class="w-6 h-6 icon-inactive"></i>
+                        <span class="font-semibold text-lg">AI CRM</span>
+                    </button>
+                </div>
+
+                <!-- Content Area -->
+                <div class="lg:w-2/3 relative" id="tab-contents">
+                    
+                    <!-- Content: Conversations AI -->
+                    <div id="conversations" class="tab-content animate-fadeIn p-8 rounded-xl border border-gray-800 bg-brand-darker shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8 opacity-5">
+                            <i data-lucide="message-square" style="width: 200px; height: 200px;"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-8">
+                                <div class="p-3 rounded-md bg-brand-gold text-black">
+                                    <i data-lucide="message-square" class="w-8 h-8"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold">Conversations AI</h3>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                <div class="bg-red-950/20 border border-red-900/30 p-6 rounded-lg">
+                                    <h4 class="text-red-400 font-bold mb-2 uppercase text-sm tracking-wider flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-red-500"></span> The Problem
+                                    </h4>
+                                    <p class="text-gray-300">Missed calls or messages after hours lead to lost bookings for salons and spas.</p>
+                                </div>
+                                <div class="bg-brand-gold/10 border border-brand-gold/30 p-6 rounded-lg">
+                                    <h4 class="text-brand-gold font-bold mb-2 uppercase text-sm tracking-wider flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-brand-gold"></span> The Solution
+                                    </h4>
+                                    <p class="text-gray-300">AI assistant books appointments and answers inquiries 24/7—even through Facebook or voice—boosting responsiveness and filling more seats.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-4 border-b border-gray-800 pb-2">Key Capabilities</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>24/7 AI Receptionist captures leads automatically</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>AI Inside Salesperson for lead qualification</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>AI Support Agent for instant FAQs</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Unified Inbox (Phone, SMS, Chat, WhatsApp, Socials)</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Multi-language support & 372% increase in conversion</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content: Reputation AI -->
+                    <div id="reputation" class="tab-content hidden animate-fadeIn p-8 rounded-xl border border-gray-800 bg-brand-darker shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8 opacity-5">
+                            <i data-lucide="star" style="width: 200px; height: 200px;"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-8">
+                                <div class="p-3 rounded-md bg-brand-gold text-black">
+                                    <i data-lucide="star" class="w-8 h-8"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold">Reputation AI</h3>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                <div class="bg-red-950/20 border border-red-900/30 p-6 rounded-lg">
+                                    <h4 class="text-red-400 font-bold mb-2 uppercase text-sm tracking-wider flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-red-500"></span> The Problem
+                                    </h4>
+                                    <p class="text-gray-300">Reviews are inconsistently requested and hard to manage, impacting client trust and visibility.</p>
+                                </div>
+                                <div class="bg-brand-gold/10 border border-brand-gold/30 p-6 rounded-lg">
+                                    <h4 class="text-brand-gold font-bold mb-2 uppercase text-sm tracking-wider flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-brand-gold"></span> The Solution
+                                    </h4>
+                                    <p class="text-gray-300">Automates post-visit review requests, centralizes reviews, and enables fast AI replies to improve ratings and local search performance.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-4 border-b border-gray-800 pb-2">Key Capabilities</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>AI Reputation Specialist for automated responses</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Centralized Google/Yelp review dashboard</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>NPS feedback collection before requesting reviews</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Competitor monitoring & real-time alerts</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Early sentiment indicators to prevent churn</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content: Social Marketing -->
+                    <div id="social" class="tab-content hidden animate-fadeIn p-8 rounded-xl border border-gray-800 bg-brand-darker shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8 opacity-5">
+                            <i data-lucide="share-2" style="width: 200px; height: 200px;"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-8">
+                                <div class="p-3 rounded-md bg-brand-gold text-black">
+                                    <i data-lucide="share-2" class="w-8 h-8"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold">Social Marketing</h3>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                <div class="bg-red-950/20 border border-red-900/30 p-6 rounded-lg">
+                                    <h4 class="text-red-400 font-bold mb-2 uppercase text-sm tracking-wider flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-red-500"></span> The Problem
+                                    </h4>
+                                    <p class="text-gray-300">Inconsistent social posting lowers visibility and engagement.</p>
+                                </div>
+                                <div class="bg-brand-gold/10 border border-brand-gold/30 p-6 rounded-lg">
+                                    <h4 class="text-brand-gold font-bold mb-2 uppercase text-sm tracking-wider flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-brand-gold"></span> The Solution
+                                    </h4>
+                                    <p class="text-gray-300">AI creates and schedules branded content keeping Instagram, Facebook, and TikTok feeds active with minimal effort.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-4 border-b border-gray-800 pb-2">Key Capabilities</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>AI Content Creator generates relevant posts instantly</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Publish and schedule across all major platforms</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Transform Instagram posts into a shoppable gallery</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Manage all comments and mentions in one place</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content: Local SEO Pro -->
+                    <div id="seo" class="tab-content hidden animate-fadeIn p-8 rounded-xl border border-gray-800 bg-brand-darker shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8 opacity-5">
+                            <i data-lucide="map-pin" style="width: 200px; height: 200px;"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-8">
+                                <div class="p-3 rounded-md bg-brand-gold text-black">
+                                    <i data-lucide="map-pin" class="w-8 h-8"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold">Local SEO Pro</h3>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                <div class="bg-red-950/20 border border-red-900/30 p-6 rounded-lg">
+                                    <h4 class="text-red-400 font-bold mb-2 uppercase text-sm tracking-wider flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-red-500"></span> The Problem
+                                    </h4>
+                                    <p class="text-gray-300">Inaccurate or inconsistent business listings across directories reduce local search visibility.</p>
+                                </div>
+                                <div class="bg-brand-gold/10 border border-brand-gold/30 p-6 rounded-lg">
+                                    <h4 class="text-brand-gold font-bold mb-2 uppercase text-sm tracking-wider flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-brand-gold"></span> The Solution
+                                    </h4>
+                                    <p class="text-gray-300">Sync and manage business information across platforms in real time, while building new citations to boost local rankings.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-4 border-b border-gray-800 pb-2">Key Capabilities</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Listing Sync Pro across Google, Facebook, Apple, etc.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Citation Builder on high-authority sites</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Google Business Profile Insights integration</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Keyword Tracking for organic search & Maps</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>AI-powered business descriptions</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content: Campaign Pro -->
+                    <div id="campaign" class="tab-content hidden animate-fadeIn p-8 rounded-xl border border-gray-800 bg-brand-darker shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8 opacity-5">
+                            <i data-lucide="mail" style="width: 200px; height: 200px;"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-8">
+                                <div class="p-3 rounded-md bg-brand-gold text-black">
+                                    <i data-lucide="mail" class="w-8 h-8"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold">Campaign Pro</h3>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                <div class="bg-red-950/20 border border-red-900/30 p-6 rounded-lg">
+                                    <h4 class="text-red-400 font-bold mb-2 uppercase text-sm tracking-wider flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-red-500"></span> The Problem
+                                    </h4>
+                                    <p class="text-gray-300">Lack of personalized messaging leads to missed promos and lower retention.</p>
+                                </div>
+                                <div class="bg-brand-gold/10 border border-brand-gold/30 p-6 rounded-lg">
+                                    <h4 class="text-brand-gold font-bold mb-2 uppercase text-sm tracking-wider flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-brand-gold"></span> The Solution
+                                    </h4>
+                                    <p class="text-gray-300">Sends AI-personalized emails and SMS—like "We miss you" promos and last-minute openings—to boost rebookings and loyalty.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-4 border-b border-gray-800 pb-2">Key Capabilities</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Automated personalized email & SMS campaigns</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Performance tracking and analytics</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Targeted wellness campaigns</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Rapid rebooking prompts</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content: AI CRM -->
+                    <div id="crm" class="tab-content hidden animate-fadeIn p-8 rounded-xl border border-gray-800 bg-brand-darker shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8 opacity-5">
+                            <i data-lucide="briefcase" style="width: 200px; height: 200px;"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-8">
+                                <div class="p-3 rounded-md bg-brand-gold text-black">
+                                    <i data-lucide="briefcase" class="w-8 h-8"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold">AI CRM</h3>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                <div class="bg-red-950/20 border border-red-900/30 p-6 rounded-lg">
+                                    <h4 class="text-red-400 font-bold mb-2 uppercase text-sm tracking-wider flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-red-500"></span> The Problem
+                                    </h4>
+                                    <p class="text-gray-300">Manual data entry and blind spots in the sales pipeline lose deals.</p>
+                                </div>
+                                <div class="bg-brand-gold/10 border border-brand-gold/30 p-6 rounded-lg">
+                                    <h4 class="text-brand-gold font-bold mb-2 uppercase text-sm tracking-wider flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-brand-gold"></span> The Solution
+                                    </h4>
+                                    <p class="text-gray-300">A CRM that updates itself by extracting meeting outcomes, scoring interactions, and surfacing hidden opportunities natively.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-4 border-b border-gray-800 pb-2">Key Capabilities</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Automated meeting summaries & bulleted action items</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Built-in meeting recording (Google Meet, MS Teams)</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Automated scoring against BANT, MEDDPICC, Sandler</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>AI Sales Assistant answers natural-language questions</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i data-lucide="check-circle" class="text-brand-gold mt-1 shrink-0 w-5 h-5"></i>
+                                        <span>Custom Objects for industry-specific data tracking</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Workflows -->
+    <section id="workflows" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Turn Leads into Loyal Customers with <span class="text-brand-gold">AI Workflows</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Automation templates ensuring no lead slips away, every follow-up is timely, and every satisfied client becomes a regular.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Workflow 1 -->
+                <div class="bg-black border border-gray-800 hover:border-brand-gold transition-all p-8 rounded-lg group">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold">Attract</h3>
+                        <div class="p-2 rounded-full bg-gray-900 group-hover:bg-brand-gold/20 transition-colors text-brand-gold">
+                            <!-- Custom Magnet SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 15-4-4 6.75-6.77a7.79 7.79 0 0 1 11 11L13 22l-4-4 6.39-6.36a2.14 2.14 0 0 0-3-3L6 15" />
+                                <path d="m5 8 4 4" />
+                                <path d="m12 15 4 4" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <span class="block text-gray-500 font-semibold uppercase tracking-wider mb-1 text-xs">Scenario</span>
+                            <p class="text-gray-300 bg-gray-900/50 p-3 rounded">A potential client messages at 9pm asking about availability for the weekend.</p>
+                        </div>
+                        <div>
+                            <span class="block font-semibold uppercase tracking-wider mb-1 text-xs text-brand-gold">AI Action</span>
+                            <p class="text-white bg-brand-gold/10 p-3 rounded border border-brand-gold/20">System instantly sends a warm, personalized response to book them, even when you're closed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workflow 2 -->
+                <div class="bg-black border border-gray-800 hover:border-brand-gold transition-all p-8 rounded-lg group">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold">Convert & Engage</h3>
+                        <div class="p-2 rounded-full bg-gray-900 group-hover:bg-brand-gold/20 transition-colors text-brand-gold">
+                            <i data-lucide="git-merge" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <span class="block text-gray-500 font-semibold uppercase tracking-wider mb-1 text-xs">Scenario</span>
+                            <p class="text-gray-300 bg-gray-900/50 p-3 rounded">After a live chat, the system needs to secure the lead.</p>
+                        </div>
+                        <div>
+                            <span class="block font-semibold uppercase tracking-wider mb-1 text-xs text-brand-gold">AI Action</span>
+                            <p class="text-white bg-brand-gold/10 p-3 rounded border border-brand-gold/20">Sends a confirmation SMS/email, logs client in CRM, and creates a follow-up task.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workflow 3 -->
+                <div class="bg-black border border-gray-800 hover:border-brand-gold transition-all p-8 rounded-lg group">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold">Retain</h3>
+                        <div class="p-2 rounded-full bg-gray-900 group-hover:bg-brand-gold/20 transition-colors text-brand-gold">
+                            <i data-lucide="trending-up" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <span class="block text-gray-500 font-semibold uppercase tracking-wider mb-1 text-xs">Scenario</span>
+                            <p class="text-gray-300 bg-gray-900/50 p-3 rounded">A client books their first service.</p>
+                        </div>
+                        <div>
+                            <span class="block font-semibold uppercase tracking-wider mb-1 text-xs text-brand-gold">AI Action</span>
+                            <p class="text-white bg-brand-gold/10 p-3 rounded border border-brand-gold/20">Instantly adds them to a wellness campaign that sends monthly self-care tips to bring them back.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workflow 4 -->
+                <div class="bg-black border border-gray-800 hover:border-brand-gold transition-all p-8 rounded-lg group">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold">Nurture</h3>
+                        <div class="p-2 rounded-full bg-gray-900 group-hover:bg-brand-gold/20 transition-colors text-brand-gold">
+                            <i data-lucide="phone-call" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <span class="block text-gray-500 font-semibold uppercase tracking-wider mb-1 text-xs">Scenario</span>
+                            <p class="text-gray-300 bg-gray-900/50 p-3 rounded">A client inquires about a package but doesn't book right away.</p>
+                        </div>
+                        <div>
+                            <span class="block font-semibold uppercase tracking-wider mb-1 text-xs text-brand-gold">AI Action</span>
+                            <p class="text-white bg-brand-gold/10 p-3 rounded border border-brand-gold/20">Three days later, they receive a thoughtful check-in message prompting them to lock in their spot.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workflow 5 -->
+                <div class="bg-black border border-gray-800 hover:border-brand-gold transition-all p-8 rounded-lg group">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold">Reputation</h3>
+                        <div class="p-2 rounded-full bg-gray-900 group-hover:bg-brand-gold/20 transition-colors text-brand-gold">
+                            <i data-lucide="star" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <span class="block text-gray-500 font-semibold uppercase tracking-wider mb-1 text-xs">Scenario</span>
+                            <p class="text-gray-300 bg-gray-900/50 p-3 rounded">A client's visit is marked complete in the system.</p>
+                        </div>
+                        <div>
+                            <span class="block font-semibold uppercase tracking-wider mb-1 text-xs text-brand-gold">AI Action</span>
+                            <p class="text-white bg-brand-gold/10 p-3 rounded border border-brand-gold/20">They receive a friendly SMS or email asking for a review with a direct link.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <i data-lucide="bot" class="w-12 h-12 mx-auto mb-6 text-brand-gold"></i>
+            <h2 class="text-3xl font-bold mb-6">Ready to Automate Your Personal Service Business?</h2>
+            <p class="text-gray-400 mb-8">Join the ranks of successful salons, spas, and studios utilizing The Gentleman of Marketing's AI Workforce.</p>
+            <button class="px-10 py-4 rounded-sm font-bold text-xl transition-all hover:scale-105 bg-brand-gold text-black">
+                Book a Free AI Strategy Call
+            </button>
+            
+            <div class="mt-16 pt-8 border-t border-gray-800 text-sm text-gray-600 flex flex-col md:flex-row justify-between items-center">
+                <p id="copyright-year">&copy; 2024 The Gentleman of Marketing. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-brand-gold transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Update Copyright Year dynamically
+        document.getElementById('copyright-year').innerHTML = `&copy; ${new Date().getFullYear()} The Gentleman of Marketing. All rights reserved.`;
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', () => {
+            if(!mobileMenu.classList.contains('hidden')) {
+                toggleMobileMenu();
+            }
+        }));
+
+        // AI Solutions Tabs Logic
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.getAttribute('data-target');
+
+                // 1. Hide all content panes
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                    // Reset animation
+                    content.classList.remove('animate-fadeIn');
+                });
+
+                // 2. Remove active styles from all buttons
+                tabBtns.forEach(b => {
+                    b.classList.remove('bg-brand-dark', 'border-brand-gold', 'text-white', 'shadow-md');
+                    b.classList.add('border-transparent', 'text-gray-500');
+                    
+                    // Update icon color logic
+                    const icon = b.querySelector('i');
+                    icon.classList.remove('text-brand-gold');
+                });
+
+                // 3. Show target content pane
+                const targetContent = document.getElementById(targetId);
+                targetContent.classList.remove('hidden');
+                // Trigger reflow to restart animation
+                void targetContent.offsetWidth;
+                targetContent.classList.add('animate-fadeIn');
+
+                // 4. Add active styles to clicked button
+                btn.classList.remove('border-transparent', 'text-gray-500');
+                btn.classList.add('bg-brand-dark', 'border-brand-gold', 'text-white', 'shadow-md');
+                
+                // Update icon color for active button
+                const activeIcon = btn.querySelector('i');
+                activeIcon.classList.add('text-brand-gold');
+            });
+        });
+    </script>
+</body>
+</html>
