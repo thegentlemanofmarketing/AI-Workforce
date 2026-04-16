@@ -72,9 +72,9 @@
                         <a href="#journey" class="hover:text-brand-gold transition-colors px-3 py-2 rounded-md text-sm font-medium">Journey</a>
                         <a href="#services" class="hover:text-brand-gold transition-colors px-3 py-2 rounded-md text-sm font-medium">AI Solutions</a>
                         <a href="#workflows" class="hover:text-brand-gold transition-colors px-3 py-2 rounded-md text-sm font-medium">Workflows</a>
-                        <button class="px-6 py-2 rounded-sm font-medium transition-all hover:opacity-90 bg-brand-gold text-black">
+                        <a href="https://buy.stripe.com/aFadRaaf530V37W0E71RC04" target="_blank" class="px-6 py-2 rounded-sm font-medium transition-all hover:opacity-90 bg-brand-gold text-black inline-block">
                             Get Started
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="-mr-2 flex md:hidden">
@@ -110,9 +110,9 @@
                 In personal services, speed and visibility drive bookings. Our bespoke AI Workforce keeps you responsive 24/7, boosting visibility, managing reputation, and capturing leads while you focus on your clients.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button class="px-8 py-4 rounded-sm font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-brand-gold/20 bg-brand-gold text-black">
+                <a href="https://buy.stripe.com/aFadRaaf530V37W0E71RC04" target="_blank" class="px-8 py-4 rounded-sm font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-brand-gold/20 bg-brand-gold text-black inline-block">
                     Deploy Your AI Workforce
-                </button>
+                </a>
                 <button class="px-8 py-4 rounded-sm font-bold text-lg border-2 border-brand-gold text-brand-gold transition-all hover:bg-white/5">
                     Explore Features
                 </button>
@@ -673,9 +673,9 @@
             <i data-lucide="bot" class="w-12 h-12 mx-auto mb-6 text-brand-gold"></i>
             <h2 class="text-3xl font-bold mb-6">Ready to Automate Your Personal Service Business?</h2>
             <p class="text-gray-400 mb-8">Join the ranks of successful salons, spas, and studios utilizing The Gentleman of Marketing's AI Workforce.</p>
-            <button class="px-10 py-4 rounded-sm font-bold text-xl transition-all hover:scale-105 bg-brand-gold text-black">
+            <a href="https://cal.com/michael-c-pitts/15min" target="_blank" class="px-10 py-4 rounded-sm font-bold text-xl transition-all hover:scale-105 bg-brand-gold text-black inline-block">
                 Book a Free AI Strategy Call
-            </button>
+            </a>
             
             <div class="mt-16 pt-8 border-t border-gray-800 text-sm text-gray-600 flex flex-col md:flex-row justify-between items-center">
                 <p id="copyright-year">&copy; 2024 The Gentleman of Marketing. All rights reserved.</p>
@@ -735,9 +735,9 @@
                     b.classList.remove('bg-brand-dark', 'border-brand-gold', 'text-white', 'shadow-md');
                     b.classList.add('border-transparent', 'text-gray-500');
                     
-                    // Update icon color logic
-                    const icon = b.querySelector('i');
-                    icon.classList.remove('text-brand-gold');
+                    // Update icon color logic (Lucide converts <i> to <svg>)
+                    const icon = b.querySelector('svg');
+                    if (icon) icon.classList.remove('text-brand-gold');
                 });
 
                 // 3. Show target content pane
@@ -752,8 +752,8 @@
                 btn.classList.add('bg-brand-dark', 'border-brand-gold', 'text-white', 'shadow-md');
                 
                 // Update icon color for active button
-                const activeIcon = btn.querySelector('i');
-                activeIcon.classList.add('text-brand-gold');
+                const activeIcon = btn.querySelector('svg');
+                if (activeIcon) activeIcon.classList.add('text-brand-gold');
             });
         });
     </script>
